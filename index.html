@@ -83,113 +83,24 @@
 		<section id="projects" class="content-section">
 			<h2 class="section-title">Projects</h2>
 
-			<div class="projects-grid">
+			<div class="projects-grid" id="projectsGrid"></div>
+
+			<template id="projectCardTemplate">
 				<article class="project-card">
-					<div class="project-badges">
-						<span class="badge-tag new">new</span>
-					</div>
+					<div class="project-badges"></div>
+
 					<div class="project-icon">
-						<img src="images/pic02.png" alt="" />
+						<img src="" alt="" loading="lazy" />
 					</div>
+
 					<div class="project-info">
-						<h3>Web Portfolio</h3>
-						<p>My personal site for projects, dev stuff, and contact info.</p>
+						<h3></h3>
+						<p></p>
 					</div>
 				</article>
-
-				<article class="project-card">
-					<div class="project-badges">
-						<span class="badge-tag new">new</span>
-						<span class="badge-tag progress">in progress</span>
-					</div>
-					<div class="project-icon">
-						<img src="images/pic02.png" alt="" />
-					</div>
-					<div class="project-info">
-						<h3>Pinfield</h3>
-						<p>A minimal, one-input pinball/pachinko-inspired incremental built around satisfying juice and
-							engine-building upgrades.</p>
-					</div>
-				</article>
-
-				<article class="project-card">
-					<div class="project-badges">
-						<span class="badge-tag hot">hot</span>
-						<span class="badge-tag new">new</span>
-					</div>
-					<div class="project-icon">
-						<img src="images/pic02.png" alt="" />
-					</div>
-					<div class="project-info">
-						<h3>The Diner</h3>
-						<p>A small, finished game project focused on gameplay feel, UI polish, and clean implementation.
-						</p>
-					</div>
-				</article>
-
-				<article class="project-card">
-					<div class="project-badges">
-						<span class="badge-tag progress">in progress</span>
-						<span class="badge-tag new">new</span>
-					</div>
-					<div class="project-icon">
-						<img src="images/pic02.png" alt="" />
-					</div>
-					<div class="project-info">
-						<h3>Project Somna</h3>
-						<p>A sleep-themed puzzle platformer exploring sleepwalking and science-driven sleep psychosis.
-							Focus:
-							puzzles, traversal, and moment-to-moment clarity.</p>
-					</div>
-				</article>
-
-				<article class="project-card">
-					<div class="project-badges">
-						<span class="badge-tag old">archived</span>
-					</div>
-					<div class="project-icon">
-						<img src="images/pic02.png" alt="" />
-					</div>
-					<div class="project-info">
-						<h3>Shadow Burrow</h3>
-						<p>A Metroidvania built around atmosphere, exploration, and ability-based progression. Focus:
-							player
-							movement, flow, and systemic upgrades.</p>
-					</div>
-				</article>
-
-				<article class="project-card">
-					<div class="project-badges">
-						<span class="badge-tag onhold">on hold</span>
-					</div>
-					<div class="project-icon">
-						<img src="images/pic02.png" alt="" />
-					</div>
-					<div class="project-info">
-						<h3>SOVARIEL</h3>
-						<p>A co-op space survival-horror prototype. Focus: gameplay systems, multiplayer foundations,
-							and
-							moment-to-moment tension.</p>
-					</div>
-				</article>
-
-				<article class="project-card">
-					<div class="project-badges">
-						<span class="badge-tag onhold">on hold</span>
-					</div>
-					<div class="project-icon">
-						<img src="images/pic02.png" alt="" />
-					</div>
-					<div class="project-info">
-						<h3>MycoMini</h3>
-						<p>A tiny mushroom identification + potion-brewing game. One-screen loop: forage → identify →
-							brew → fill
-							the codex.</p>
-					</div>
-				</article>
-			</div>
-
+			</template>
 		</section>
+
 
 		<!-- Footer -->
 		<footer id="footer">
@@ -205,6 +116,7 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<script src="assets/js/projects.js"></script>
 
 </body>
 
