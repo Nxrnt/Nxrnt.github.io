@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sass:*)",
+      "Bash(npx sass --version)",
+      "Bash(npx sass:*)"
+    ]
+  }
+}

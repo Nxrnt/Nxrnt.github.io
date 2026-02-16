@@ -1,0 +1,486 @@
+/* Two-Column Layout */
+
+body {
+    background: #0f1419 !important;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* Left Profile Sidebar */
+
+#profile-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 450px;
+    height: 100vh;
+    background: #1a1f29;
+    padding: 3em 2.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.profile-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.profile-text {
+    width: 100%;
+}
+
+.profile-avatar {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 2em;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-name {
+    font-size: 2em;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.5em;
+    line-height: 1.2;
+}
+
+.profile-tagline {
+    font-size: 1.1em;
+    color: #e8e8e8;
+    margin: 0 0 1em;
+    font-weight: 400;
+}
+
+.profile-description {
+    font-size: 0.95em;
+    color: #9a9a9a;
+    margin: 0 0 2em;
+    line-height: 1.6;
+}
+
+/* Bottom Section */
+
+.profile-bottom {
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Social Icons */
+
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8em;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #2a3441;
+    border-radius: 8px;
+    color: #9a9a9a;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+}
+
+.social-icons a:hover {
+    background: #3a4556;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Email Section */
+
+.profile-email {
+    margin-top: 1.5em;
+    padding-top: 1.5em;
+    border-top: 1px solid #2a3441;
+}
+
+.email-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    color: #9a9a9a;
+    font-size: 0.9em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    border: none;
+}
+
+.email-link:hover {
+    color: #ffffff;
+}
+
+.email-link i {
+    font-size: 1.1em;
+}
+
+/* Main Content Area */
+
+#content {
+    margin-left: 400px;
+    width: calc(100% - 400px);
+    padding: 3em 4em;
+    min-height: 100vh;
+}
+
+/* Content Sections */
+
+.content-section {
+    margin-bottom: 4em;
+}
+
+.section-title {
+    font-size: 2.5em;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0 0 0.5em;
+    letter-spacing: -0.02em;
+}
+
+/* About Section */
+
+.about-content {
+    max-width: 800px;
+}
+
+.about-content p {
+    font-size: 1.05em;
+    line-height: 1.8;
+    color: #b5b5b5;
+    margin-bottom: 1.5em;
+}
+
+/* Projects Grid */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 0.5em 1.5em !important;
+    margin-top: 2em;
+}
+
+.project-card {
+    height: 6em;
+    background: #1a1f29;
+    border-radius: 16px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #2a3441;
+    position: relative;
+    margin: 0.25em;
+}
+
+.project-card:hover {
+    background: #212835;
+    border-color: #3b4655;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.project-icon {
+    width: 125px;
+    height: 125px;
+    min-width: 105px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #2a3441;
+}
+
+.project-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+}
+
+.project-info h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.3em 0;
+}
+
+.project-info p {
+    font-size: 0.9em;
+    color: #9a9a9a;
+    margin: 0;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Project Badges */
+
+.project-badges {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 0.4em;
+    z-index: 10;
+}
+
+.badge-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 25px;
+    padding: 0 0.5em;
+    font-size: 0.55em;
+    font-weight: 600;
+    text-transform: lowercase;
+    border-radius: 250px;
+    letter-spacing: 0.02em;
+    line-height: 1;
+}
+
+.badge-tag.hot {
+    background: #c13b3b;
+    color: #ffffff;
+}
+
+.badge-tag.new {
+    background: #2d7a4f;
+    color: #ffffff;
+}
+
+.badge-tag.progress {
+    background: #4a6fa5;
+    color: #ffffff;
+}
+
+.badge-tag.old {
+    background: #555555;
+    color: #aaaaaa;
+}
+
+.badge-tag.onhold {
+    background: #b8860b;
+    color: #ffffff;
+}
+
+/* Footer */
+
+#footer {
+    text-align: center;
+    padding: 2em 0;
+    color: #6a7280;
+    font-size: 0.9em;
+    border-top: 1px solid #2a3441;
+    margin-top: 4em;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 1280px) {
+    #content {
+        padding: 3em 3em;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media screen and (max-width: 980px) {
+    #profile-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        padding: 1.5em;
+        z-index: 1001;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5em;
+        text-align: left;
+    }
+
+    .profile-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3em;
+    }
+
+    .profile-avatar {
+        width: 60px;
+        height: 60px;
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    .profile-description {
+        display: none;
+    }
+
+    .profile-bottom {
+        display: none;
+    }
+
+    .profile-name {
+        margin: 0;
+        font-size: 1.3em;
+    }
+
+    .profile-tagline {
+        margin: 0;
+        font-size: 0.85em;
+    }
+
+    #content {
+        margin-left: 0;
+        margin-top: 150px;
+        width: 100%;
+        padding: 2em 1.5em;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #profile-sidebar {
+        padding: 1.5em 1em;
+    }
+
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 1em;
+    }
+
+    .profile-name {
+        font-size: 1.4em;
+        margin-bottom: 0.3em;
+    }
+
+    .profile-tagline {
+        font-size: 0.95em;
+        margin-bottom: 0.5em;
+    }
+
+    .profile-description {
+        font-size: 0.85em;
+        margin-bottom: 1em;
+    }
+
+    .social-icons {
+        margin-top: 1em;
+        gap: 0.5em;
+    }
+
+    .social-icons a {
+        width: 36px;
+        height: 36px;
+        font-size: 1em;
+    }
+
+    #content {
+        padding: 1.5em 1em;
+    }
+
+    .section-title {
+        font-size: 1.6em;
+        margin-bottom: 0.8em;
+    }
+
+    .about-content p {
+        font-size: 0.95em;
+        margin-bottom: 1em;
+    }
+
+    .projects-grid {
+        gap: 1em;
+        margin-top: 1em;
+    }
+
+    .project-card {
+        height: auto;
+        min-height: 100px;
+        padding: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-icon {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+        margin-bottom: 0.8em;
+    }
+
+    .project-info h3 {
+        font-size: 1.1em;
+        margin-bottom: 0.4em;
+    }
+
+    .project-info p {
+        font-size: 0.85em;
+    }
+
+    .project-badges {
+        top: 8px;
+        right: 8px;
+    }
+
+    .badge-tag {
+        min-width: 40px;
+        height: 20px;
+        font-size: 0.5em;
+    }
+
+    #footer {
+        padding: 1.5em 0;
+        margin-top: 2em;
+        font-size: 0.8em;
+    }
+}
