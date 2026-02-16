@@ -3,72 +3,37 @@
         "title": "Template",
         "desc": "",
         "img": "",
-        "badges": [
-            "old",
-            "new",
-            "hot",
-            "progress",
-            "onhold"
-        ]
+        "badge": "",
+        "stack": []
     },
     {
-        "title": "Web Portfolio",
-        "desc": "My personal site for projects, dev stuff, and contact info.",
+        "title": "The Diner",
+        "desc": "Exit 8-inspired anomaly horror, jam-built.",
         "img": "images/pic02.png",
-        "badges": [
-            "new",
-            "progress"
+        "badge": "hot",
+        "stack": [
+            "Unity",
+            "C#"
         ]
     },
     {
         "title": "Pinfield",
-        "desc": "A minimal, one-input pinball/pachinko-inspired incremental built around satisfying juice and engine-building upgrades.",
-        "img": "images/pic02.png",
-        "badges": [
-            "new",
-            "progress"
-        ]
-    },
-    {
-        "title": "The Diner",
-        "desc": "A small, finished game project focused on gameplay feel, UI polish, and clean implementation.",
-        "img": "images/pic02.png",
-        "badges": [
-            "hot",
-            "new"
-        ]
-    },
-    {
-        "title": "Project Somna",
-        "desc": "A sleep-themed Metroidvania puzzle-platformer about sleepwalking and science-induced sleep psychosis. Focus: puzzles, traversal, and moment-to-moment clarity.",
-        "img": "images/pic02.png",
-        "badges": [
-            "old",
-            "onhold"
+        "desc": "One-input pinball incremental with upgrades.",
+        "img": "images/pic03.png",
+        "badge": "progress",
+        "stack": [
+            "Godot"
         ]
     },
     {
         "title": "Shadow Burrow",
-        "desc": "A Metroidvania built around atmosphere, exploration, and ability-based progression. Focus: movement, flow, and systemic upgrades.",
-        "img": "images/pic02.png",
-        "badges": [
-            "old"
-        ]
-    },
-    {
-        "title": "SOVARIEL",
-        "desc": "A co-op space survival-horror prototype set on a colossal megaship. Focus: gameplay systems, multiplayer foundations, and tension.",
-        "img": "images/pic02.png",
-        "badges": [
-            "onhold"
-        ]
-    },
-    {
-        "title": "MycoMini",
-        "desc": "A tiny mushroom identification + potion-brewing game. One-screen loop: forage \u2192 identify \u2192 brew \u2192 fill the codex.",
-        "img": "images/pic02.png",
-        "badges": [
-            "progress"
+        "desc": "Atmospheric Metroidvania with traversal and secrets.",
+        "img": "images/pic04.png",
+        "badge": "old",
+        "stack": [
+            "Unity",
+            "C#",
+            "Git"
         ]
     }
 ]

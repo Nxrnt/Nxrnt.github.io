@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 
 <head>
@@ -24,28 +19,29 @@
 			</div>
 
 			<div class="profile-text">
-				<h1 class="profile-name">Peter Parker</h1>
-				<p class="profile-tagline">Game designer + video editor.</p>
+				<h1 class="profile-name">Peter Parker&#8209;Laslett</h1>
+				<p class="profile-tagline">I make games & edit videos.</p>
 			</div>
 
-			<p class="profile-description">Follow along for my Unity projects, devlogs, and the next thing I'm
-				prototyping.</p>
+			<p class="profile-description">
+				Mostly Unity prototypes, UX experiments, and the occasional devlogs on YouTube.
+			</p>
 
 			<!-- Bottom Section -->
 			<div class="profile-bottom">
 				<!-- Social Icons -->
 				<div class="social-icons">
 					<a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a>
-					<a href="#" class="icon brands fa-discord"><span class="label">Discord</span></a>
+					<a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a>
 					<a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a>
 					<a href="#" class="icon solid fa-mug-hot"><span class="label">Coffee</span></a>
 				</div>
 
 				<!-- Email Section -->
 				<div class="profile-email">
-					<a href="mailto:peter@example.com" class="email-link">
+					<a href="mailto:peter.parkerlaslett@gmail.com" class="email-link">
 						<i class="icon solid fa-envelope"></i>
-						<span>peter@example.com</span>
+						<span>peter.parkerlaslett@gmail.com</span>
 					</a>
 				</div>
 			</div>
@@ -54,29 +50,15 @@
 
 	<!-- Main Content -->
 	<main id="content">
-		<!-- About Me Section -->
+
+		<!-- About Section -->
 		<section id="about" class="content-section">
-			<h2 class="section-title">About Me</h2>
+			<h2 class="section-title">About</h2>
+
 			<div class="about-content">
 				<p>
-					Hi, I’m Peter - a game designer and video editor who’s into building mechanically satisfying systems
-					and clean UX. I mostly work in Unity (C#), and I like turning messy ideas into playable prototypes
-					fast.
-				</p>
-
-				<p>
-					I’m currently working on a few small games as portfolio pieces, focusing on core loops, progression,
-					and player feel - the stuff that makes a game “click”. I enjoy designing systems, tuning mechanics,
-					and iterating from feedback until it feels right.
-				</p>
-
-				<p>
-					When I’m not making games, I’m usually editing videos/devlogs, tinkering with tools, or diving into
-					a
-					new project idea.
-				</p>
+					Hey! I’m Peter (also known as nix). I build small games and systems in Unity (C#).
 			</div>
-
 		</section>
 
 		<!-- Projects Section -->
@@ -86,26 +68,24 @@
 			<div class="projects-grid" id="projectsGrid"></div>
 
 			<template id="projectCardTemplate">
-				<article class="project-card">
-					<div class="project-badges"></div>
-
-					<div class="project-icon">
-						<img src="" alt="" loading="lazy" />
+				<article class="mcard">
+					<div class="mcard-left">
+						<div class="mcard-icon">
+							<img src="" alt="" loading="lazy" />
+						</div>
+						<div class="mcard-badge" hidden></div>
 					</div>
 
-					<div class="project-info">
-						<h3></h3>
-						<p></p>
+					<!-- chips in the card corner -->
+					<div class="mcard-stack"></div>
+
+					<div class="mcard-body">
+						<h3 class="mcard-title"></h3>
+						<p class="mcard-subtitle"></p>
 					</div>
 				</article>
 			</template>
 		</section>
-
-
-		<!-- Footer -->
-		<footer id="footer">
-			<p>&copy; 2026 Peter Parker. All rights reserved.</p>
-		</footer>
 	</main>
 
 	<!-- Scripts -->
@@ -116,6 +96,8 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+
+	<!-- Your projects renderer (from earlier) -->
 	<script src="assets/js/projects.js"></script>
 
 </body>

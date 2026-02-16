@@ -1,64 +1,92 @@
-const badgeText = {
-    new: "new",
-    progress: "in progress",
-    hot: "hot",
-    old: "archived",
-    onhold: "on hold",
-};
+(() => {
+    "use strict";
 
-function hasBadge(p, badge) {
-    return Array.isArray(p.badges) && p.badges.includes(badge);
-}
+    const badgeEmoji = {
+        hot: "🔥",
+        new: "✨",
+        old: "💀",
+        progress: "🛠️"
+    };
 
-// lower number = earlier in list
-function sortKey(p) {
-    // archived ALWAYS at the bottom
-    if (hasBadge(p, "old")) return 2;
+    // lower = earlier
+    function sortKey(p) {
+        const b = p.badge;
+        if (b === "hot") return 0;
+        if (b === "new") return 1;
+        if (b === "old") return 3;
+        return 2; // no badge (or unknown) goes in the middle after "new"
+    }
 
-    // hot projects at the start
-    if (hasBadge(p, "hot")) return 0;
+    async function initProjects() {
+        const grid = document.getElementById("projectsGrid");
+        const tpl = document.getElementById("projectCardTemplate");
 
-    // everything else in the middle
-    return 1;
-}
+        const res = await fetch("data/projects.json", { cache: "no-store" });
+        if (!res.ok) throw new Error(`Failed to load projects.json (${res.status})`);
+        const projects = await res.json();
 
-async function initProjects() {
-    const grid = document.getElementById("projectsGrid");
-    const tpl = document.getElementById("projectCardTemplate");
+        const filtered = (Array.isArray(projects) ? projects : [])
+            .filter((p) => p?.title && p.title !== "Template");
 
-    const res = await fetch("data/projects.json", { cache: "no-store" });
-    if (!res.ok) throw new Error(`Failed to load projects.json (${res.status})`);
-    const projects = await res.json();
+        // stable sort (keeps original order within groups)
+        const sorted = filtered
+            .map((p, i) => ({ p, i }))
+            .sort((a, b) => sortKey(a.p) - sortKey(b.p) || a.i - b.i)
+            .map((x) => x.p);
 
-    // remove template entries
-    const filtered = projects.filter((p) => p.title !== "Template");
+        grid.innerHTML = "";
 
-    // stable sort: preserve original order within each group
-    const sorted = filtered
-        .map((p, i) => ({ p, i }))
-        .sort((a, b) => sortKey(a.p) - sortKey(b.p) || a.i - b.i)
-        .map((x) => x.p);
+        sorted.forEach((p) => {
+            const node = tpl.content.cloneNode(true);
 
-    sorted.forEach((p) => {
-        const node = tpl.content.cloneNode(true);
+            // image
+            const img = node.querySelector("img");
+            img.src = p.img || "images/pic02.png";
+            img.alt = p.title || "";
 
-        const img = node.querySelector("img");
-        img.src = p.img || "images/pic02.png";
-        img.alt = p.title || "";
+            // title + desc
+            node.querySelector(".mcard-title").textContent = p.title || "Untitled";
+            node.querySelector(".mcard-subtitle").textContent = p.desc || "";
 
-        node.querySelector("h3").textContent = p.title || "Untitled";
-        node.querySelector("p").textContent = p.desc || "";
+            // tech chips
+            const stackWrap = node.querySelector(".mcard-stack");
+            if (stackWrap) {
+                stackWrap.innerHTML = "";
 
-        const badgesWrap = node.querySelector(".project-badges");
-        (p.badges || []).forEach((b) => {
-            const span = document.createElement("span");
-            span.className = `badge-tag ${b}`;
-            span.textContent = badgeText[b] || b;
-            badgesWrap.appendChild(span);
+                (p.stack || []).forEach((t) => {
+                    const chip = document.createElement("span");
+
+                    // Optional: auto classify for nicer colors (can remove if you want all same)
+                    const lower = String(t).toLowerCase();
+                    let kind = "tool";
+                    if (["c#", "c++", "python", "gdscript", "typescript", "javascript"].includes(lower)) kind = "lang";
+                    if (["unity", "godot", "unreal", "unreal engine", "unity engine"].includes(lower)) kind = "engine";
+
+                    chip.className = `tech-chip ${kind}`;
+                    chip.textContent = t;
+
+                    stackWrap.appendChild(chip);
+                });
+            }
+
+            const badgeEmoji = { hot: "🔥", new: "✨", old: "💀", progress: "🛠️" };
+
+            const badgeEl = node.querySelector(".mcard-badge");
+            if (badgeEl) {
+                const b = p.badge;
+                if (b && badgeEmoji[b]) {
+                    badgeEl.hidden = false;
+                    badgeEl.className = `mcard-badge ${b}`;
+                    badgeEl.textContent = badgeEmoji[b];
+                } else {
+                    badgeEl.hidden = true;
+                }
+            }
+
+
+            grid.appendChild(node);
         });
+    }
 
-        grid.appendChild(node);
-    });
-}
-
-initProjects().catch(console.error);
+    initProjects().catch(console.error);
+})();
