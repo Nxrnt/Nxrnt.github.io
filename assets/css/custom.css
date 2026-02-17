@@ -2,27 +2,27 @@
    NXRNT Custom Theme
    ============================= */
 
-/* Palette (given) */
+/* Palette */
 :root {
-    --tea-green: #ccd5aeff;
-    --beige: #e9edc9ff;
-    --cornsilk: #fefae0ff;
-    --papaya-whip: #faedcdff;
-    --light-bronze: #d4a373ff;
+    --eggshell: #f4f1deff;
+    --burnt-peach: #e07a5fff;
+    --twilight-indigo: #3d405bff;
+    --muted-teal: #81b29aff;
+    --apricot-cream: #f2cc8fff;
 
-    /* Dark base (to keep the vibe from your screenshots) */
+    /* Dark base */
     --bg: #0b0f12;
-    --panel: rgba(20, 26, 33, 0.92);
-    --panel2: rgba(28, 36, 46, 0.92);
+    --panel: rgba(61, 64, 91, 0.92);
+    --panel2: rgba(51, 54, 76, 0.92);
 
-    --text: rgba(254, 250, 224, 0.92);
-    /* cornsilk */
-    --muted: rgba(233, 237, 201, 0.74);
-    /* beige */
-    --muted2: rgba(233, 237, 201, 0.60);
+    --text: rgba(238, 237, 229, 0.92);
+    /* eggshell */
+    --muted: rgba(173, 151, 116, 0.74);
+    /* apricot-cream */
+    --muted2: rgba(124, 114, 97, 0.6);
 
-    --border: rgba(254, 250, 224, 0.12);
-    --border2: rgba(254, 250, 224, 0.08);
+    --border: rgba(244, 241, 222, 0.12);
+    --border2: rgba(244, 241, 222, 0.08);
 
     --shadow: rgba(0, 0, 0, 0.55);
 
@@ -31,8 +31,8 @@
     --radius-lg: 22px;
     --radius-md: 16px;
 
-    --focus: rgba(204, 213, 174, 0.45);
-    /* tea-green glow */
+    --focus: rgba(129, 178, 154, 0.45);
+    /* muted-teal glow */
 }
 
 /* Base */
@@ -46,11 +46,13 @@ body {
     padding: 0;
     color: var(--text);
 
-    /* warm dark background */
+    /* warm dark background + checkerboard */
     background:
-        radial-gradient(900px 520px at 18% 10%, rgba(204, 213, 174, 0.10), transparent 60%),
-        radial-gradient(900px 520px at 82% 22%, rgba(212, 163, 115, 0.10), transparent 60%),
-        radial-gradient(1200px 680px at 50% 100%, rgba(250, 237, 205, 0.06), transparent 60%),
+        radial-gradient(900px 520px at 18% 10%, rgba(129, 178, 154, 0.10), transparent 60%),
+        radial-gradient(900px 520px at 82% 22%, rgba(224, 122, 95, 0.10), transparent 60%),
+        radial-gradient(1200px 680px at 50% 100%, rgba(242, 204, 143, 0.06), transparent 60%),
+        linear-gradient(rgba(11, 15, 18, 0.88), rgba(11, 15, 18, 0.88)),
+        url("../../images/Checkerboard background.png") repeat,
         var(--bg) !important;
 
     display: flex;
@@ -60,6 +62,7 @@ body {
 a {
     color: inherit;
     text-decoration: none;
+    border: none;
 }
 
 a:focus-visible {
@@ -89,12 +92,9 @@ a:focus-visible {
     overflow-y: auto;
     z-index: 1000;
 
-    background:
-        linear-gradient(180deg, rgba(254, 250, 224, 0.05), transparent 42%),
-        var(--panel);
+    background-color: rgba(27, 27, 32, 0.301);
 
     border-right: 1px solid var(--border);
-    box-shadow: 12px 0 40px rgba(0, 0, 0, 0.20);
 }
 
 .profile-content {
@@ -132,7 +132,7 @@ a:focus-visible {
     font-size: 1em;
     margin: 0 0 0.7em;
     font-weight: 500;
-    color: rgba(254, 250, 224, 0.86);
+    color: rgba(244, 241, 222, 0.86);
 }
 
 .profile-description {
@@ -170,7 +170,7 @@ a:focus-visible {
     border-radius: 12px;
     border: 1px solid var(--border2);
 
-    background: rgba(254, 250, 224, 0.05);
+    background: rgba(244, 241, 222, 0.05);
     color: var(--muted2);
 
     transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
@@ -178,8 +178,8 @@ a:focus-visible {
 
 .social-icons a:hover {
     transform: translateY(-2px);
-    background: rgba(254, 250, 224, 0.08);
-    color: rgba(254, 250, 224, 0.92);
+    background: rgba(244, 241, 222, 0.08);
+    color: rgba(244, 241, 222, 0.92);
 }
 
 .profile-email {
@@ -201,7 +201,7 @@ a:focus-visible {
 }
 
 .email-link:hover {
-    color: rgba(254, 250, 224, 0.92);
+    color: rgba(244, 241, 222, 0.92);
 }
 
 /* =============================
@@ -251,11 +251,10 @@ a:focus-visible {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    gap: 22px;
-    margin-top: 1.2em;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
     align-items: start;
-    /* prevents weird stretching */
+    margin-top: 1.2em;
 }
 
 /* Card */
@@ -263,44 +262,39 @@ a:focus-visible {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
 
-    /* IMPORTANT: no fixed width, grid controls it */
     width: 100%;
-    height: 160px;
-    /* you can tweak 140–170 */
-
-    padding: 16px 18px;
+    /* IMPORTANT: no fixed width */
+    height: 140px;
+    /* "75% zoom" feel */
+    padding: 14px 14px;
     box-sizing: border-box;
 
-    border-radius: var(--radius-lg);
-    background:
-        linear-gradient(180deg, rgba(254, 250, 224, 0.06), rgba(254, 250, 224, 0.02)),
-        var(--panel);
+    border-radius: 22px;
 
-    border: 1px solid var(--border);
+    background:
+        linear-gradient(180deg, rgba(244, 241, 222, 0.06), rgba(27, 27, 27, 0.02)),
+        rgba(24, 24, 24, 0.92);
+
+    border: 1px solid rgba(244, 241, 222, 0.12);
 
     box-shadow:
-        0 18px 40px var(--shadow),
-        inset 0 1px 0 rgba(254, 250, 224, 0.06);
+        0 18px 40px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(244, 241, 222, 0.06);
 
-    transform: translateZ(0);
-    /* prevents jitter */
-    will-change: transform;
     transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .mcard:hover {
-    transform: translateY(-4px) scale(1.02);
+    transform: scale(1.02);
     z-index: 10;
-    border-color: rgba(254, 250, 224, 0.16);
-    background:
-        linear-gradient(180deg, rgba(254, 250, 224, 0.07), rgba(254, 250, 224, 0.025)),
-        var(--panel2);
-
+    border-color: rgba(244, 241, 222, 0.16);
     box-shadow:
         0 22px 50px rgba(0, 0, 0, 0.60),
-        inset 0 1px 0 rgba(254, 250, 224, 0.07);
+        inset 0 1px 0 rgba(244, 241, 222, 0.07);
 }
 
 /* Rim */
@@ -308,23 +302,22 @@ a:focus-visible {
     content: "";
     position: absolute;
     inset: 7px;
-    border-radius: calc(var(--radius-lg) - 6px);
-    border: 1px solid rgba(254, 250, 224, 0.07);
+    border-radius: 16px;
+    border: 1px solid rgba(244, 241, 222, 0.07);
     pointer-events: none;
 }
 
-/* Left: icon fills card height */
+/* ===== Left image fills the card height ===== */
 .mcard-left {
     position: relative;
     height: 100%;
     aspect-ratio: 1 / 1;
-    /* square tile (Martin vibe) */
+    /* square tile */
     flex: 0 0 auto;
     overflow: visible;
-    /* allows badge to float outside */
+    /* badge can float out */
 }
 
-/* Image tile */
 .mcard-icon {
     width: 100%;
     height: 100%;
@@ -332,11 +325,11 @@ a:focus-visible {
     overflow: hidden;
 
     background: rgba(0, 0, 0, 0.18);
-    border: 1px solid rgba(254, 250, 224, 0.10);
+    border: 1px solid rgba(244, 241, 222, 0.10);
 
     box-shadow:
         0 12px 22px rgba(0, 0, 0, 0.35),
-        inset 0 1px 0 rgba(254, 250, 224, 0.05);
+        inset 0 1px 0 rgba(244, 241, 222, 0.05);
 }
 
 .mcard-icon img {
@@ -345,123 +338,119 @@ a:focus-visible {
     object-fit: cover;
 }
 
-/* Badge floating top-left of the image */
+/* Badge floating top-left of image */
 .mcard-badge {
     position: absolute;
-    top: -12px;
-    left: -12px;
+    top: -10px;
+    left: -10px;
     z-index: 5;
     pointer-events: none;
 
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
     border-radius: 999px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 22px;
+    font-size: 18px;
     line-height: 1;
 
     background: rgba(15, 18, 22, 0.70);
-    border: 1px solid rgba(254, 250, 224, 0.18);
+    border: 1px solid rgba(244, 241, 222, 0.18);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.38);
 }
 
-/* Badge tints */
 .mcard-badge.hot {
-    border-color: rgba(212, 163, 115, 0.55);
+    border-color: rgba(224, 122, 95, 0.55);
 }
 
-/* bronze */
 .mcard-badge.new {
-    border-color: rgba(204, 213, 174, 0.55);
+    border-color: rgba(129, 178, 154, 0.55);
 }
 
-/* tea-green */
 .mcard-badge.old {
-    border-color: rgba(233, 237, 201, 0.35);
+    border-color: rgba(242, 204, 143, 0.35);
     opacity: 0.92;
 }
 
-/* beige */
-
-/* Tech stack chips (top-right of the card) */
+/* ===== Chips in TOP RIGHT (absolute) ===== */
 .mcard-stack {
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 10px;
+    right: 10px;
     z-index: 4;
 
     display: flex;
-    gap: 8px;
+    gap: 6px;
     flex-wrap: wrap;
     justify-content: flex-end;
 
-    max-width: 180px;
+    max-width: 150px;
+    /* keeps it from eating the card */
 }
 
-/* Chips */
+/* Reserve space for chips so text doesn't go under them */
+.mcard-body {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-right: 140px;
+    /* matches max-width above */
+    align-self: flex-start;
+}
+
 .tech-chip {
     display: inline-flex;
     align-items: center;
-
-    height: 22px;
-    padding: 0 10px;
+    height: 20px;
+    padding: 0 9px;
     border-radius: 999px;
 
-    font-size: 0.72em;
+    font-size: 0.68em;
     font-weight: 850;
     letter-spacing: 0.04em;
     text-transform: uppercase;
 
-    color: rgba(15, 18, 22, 0.88);
-
-    background: rgba(250, 237, 205, 0.90);
-    /* papaya whip */
-    border: 1px solid rgba(212, 163, 115, 0.35);
+    color: rgba(61, 64, 91, 0.88);
+    background: rgba(242, 204, 143, 0.90);
+    border: 1px solid rgba(224, 122, 95, 0.35);
 
     box-shadow:
         0 8px 16px rgba(0, 0, 0, 0.20),
         inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
-/* Optional chip variants (if your JS adds .engine/.lang) */
+/* Optional chip variants (if your JS assigns .engine/.lang) */
 .tech-chip.engine {
-    background: rgba(204, 213, 174, 0.92);
-    /* tea-green */
-    border-color: rgba(204, 213, 174, 0.40);
+    background: rgba(129, 178, 154, 0.92);
+    border-color: rgba(129, 178, 154, 0.40);
 }
 
 .tech-chip.lang {
-    background: rgba(233, 237, 201, 0.92);
-    /* beige */
-    border-color: rgba(233, 237, 201, 0.35);
+    background: rgba(244, 241, 222, 0.92);
+    border-color: rgba(244, 241, 222, 0.35);
 }
 
-/* Text area */
-.mcard-body {
-    flex: 1 1 auto;
-    min-width: 0;
-
-    /* prevents text under the top-right chips */
-    padding-right: 150px;
-}
-
+/* ===== Text ===== */
 .mcard-title {
-    margin: 0 0 0 0;
-    font-size: 1.25em;
+    margin: 0 0 6px 0;
+    font-size: 1em;
+    /* smaller = "zoomed out" feel */
     font-weight: 900;
-    letter-spacing: 0.01em;
-    color: rgba(254, 250, 224, 0.95);
+    color: rgba(244, 241, 222, 0.95);
+
+    /* prevent nasty multi-line titles in 3-up */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .mcard-subtitle {
     margin: 0;
-    font-size: 0.9em;
-    color: var(--muted);
-    line-height: 1.5;
+    font-size: 0.78em;
+    color: rgba(242, 204, 143, 0.74);
+    line-height: 1.45;
 
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -469,6 +458,38 @@ a:focus-visible {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+/* ===== Link icons (bottom-right) ===== */
+.mcard-links {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    z-index: 4;
+
+    display: flex;
+    gap: 8px;
+}
+
+.mcard-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+
+    color: rgba(244, 241, 222, 0.50);
+    opacity: 0.5;
+
+    transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.mcard-link:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+    color: rgb(244, 241, 222);
 }
 
 /* =============================

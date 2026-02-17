@@ -14,26 +14,40 @@
         "stack": [
             "Unity",
             "C#"
-        ]
+        ],
+        "links": {
+            "itch": "https://ratking-games.itch.io/the-diner",
+            "github": ""
+        }
     },
     {
         "title": "Pinfield",
         "desc": "One-input pinball incremental with upgrades.",
-        "img": "images/pic03.png",
+        "img": "images/pinfield.png",
         "badge": "progress",
         "stack": [
-            "Godot"
-        ]
+            "Godot",
+            "C#",
+            "Git"
+        ],
+        "links": {
+            "itch": "",
+            "github": "https://github.com/Nxrnt/pinfield-prototype"
+        }
     },
     {
         "title": "Shadow Burrow",
         "desc": "Atmospheric Metroidvania with traversal and secrets.",
-        "img": "images/pic04.png",
+        "img": "images/shadow.png",
         "badge": "old",
         "stack": [
             "Unity",
             "C#",
-            "Git"
-        ]
+            "Plasic SCM"
+        ],
+        "links": {
+            "itch": "https://ratking-games.itch.io/shadow-burrow",
+            "github": ""
+        }
     }
 ]

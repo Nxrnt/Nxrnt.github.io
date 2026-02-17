@@ -13,8 +13,9 @@
         const b = p.badge;
         if (b === "hot") return 0;
         if (b === "new") return 1;
-        if (b === "old") return 3;
-        return 2; // no badge (or unknown) goes in the middle after "new"
+        if (b === "progress") return 2;
+        if (b === "old") return 4;
+        return 3; // no badge (or unknown) goes in the middle after "new"
     }
 
     async function initProjects() {
@@ -83,6 +84,27 @@
                 }
             }
 
+
+            // link icons (bottom-right)
+            const linksWrap = node.querySelector(".mcard-links");
+            if (linksWrap && p.links) {
+                const linkDefs = [
+                    { key: "itch", icon: "fa-itch-io", label: "Itch.io" },
+                    { key: "github", icon: "fa-github", label: "GitHub" }
+                ];
+                linkDefs.forEach((def) => {
+                    const url = p.links[def.key];
+                    if (!url) return;
+                    const a = document.createElement("a");
+                    a.href = url;
+                    a.target = "_blank";
+                    a.rel = "noopener noreferrer";
+                    a.className = "mcard-link";
+                    a.innerHTML = `<i class="icon brands ${def.icon}"></i>`;
+                    a.title = def.label;
+                    linksWrap.appendChild(a);
+                });
+            }
 
             grid.appendChild(node);
         });
