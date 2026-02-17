@@ -270,6 +270,7 @@ a:focus-visible {
     /* "75% zoom" feel */
     padding: 14px 14px;
     box-sizing: border-box;
+    margin: 0;
 
     border-radius: 22px;
 

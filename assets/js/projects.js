@@ -61,7 +61,7 @@
                     const lower = String(t).toLowerCase();
                     let kind = "tool";
                     if (["c#", "c++", "python", "gdscript", "typescript", "javascript"].includes(lower)) kind = "lang";
-                    if (["unity", "godot", "unreal", "unreal engine", "unity engine"].includes(lower)) kind = "engine";
+                    if (["unity", "godot", "unreal", "unreal engine", "unity engine", "phaser 3"].includes(lower)) kind = "engine";
 
                     chip.className = `tech-chip ${kind}`;
                     chip.textContent = t;
@@ -80,7 +80,7 @@
                     badgeEl.className = `mcard-badge ${b}`;
                     badgeEl.textContent = badgeEmoji[b];
                 } else {
-                    badgeEl.hidden = true;
+                    badgeEl.remove();
                 }
             }
 

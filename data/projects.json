@@ -4,11 +4,15 @@
         "desc": "",
         "img": "",
         "badge": "",
-        "stack": []
+        "stack": [],
+        "links": {
+            "itch": "",
+            "github": ""
+        }
     },
     {
         "title": "The Diner",
-        "desc": "Exit 8-inspired anomaly horror, jam-built.",
+        "desc": "A side-scrolling anomaly horror set in a looping 1950s diner.",
         "img": "images/pic02.png",
         "badge": "hot",
         "stack": [
@@ -24,7 +28,7 @@
         "title": "Pinfield",
         "desc": "One-input pinball incremental with upgrades.",
         "img": "images/pinfield.png",
-        "badge": "progress",
+        "badge": "new",
         "stack": [
             "Godot",
             "C#",
@@ -39,7 +43,7 @@
         "title": "Shadow Burrow",
         "desc": "Atmospheric Metroidvania with traversal and secrets.",
         "img": "images/shadow.png",
-        "badge": "old",
+        "badge": "",
         "stack": [
             "Unity",
             "C#",
@@ -47,6 +51,57 @@
         ],
         "links": {
             "itch": "https://ratking-games.itch.io/shadow-burrow",
+            "github": ""
+        }
+    },
+    {
+        "title": "Parasite Pals",
+        "desc": "",
+        "img": "images/pic03.jpg",
+        "badge": "",
+        "stack": [],
+        "links": {
+            "itch": "",
+            "github": ""
+        }
+    },
+    {
+        "title": "Rescue Raiders",
+        "desc": "",
+        "img": "images/pic04.jpg",
+        "badge": "old",
+        "stack": [],
+        "links": {
+            "itch": "",
+            "github": ""
+        }
+    },
+    {
+        "title": "Buscuit BattleMage",
+        "desc": "Top-down deckbuilding roguelike battle game.",
+        "img": "images/battlemage.png",
+        "badge": "old",
+        "stack": [
+            "Unity",
+            "C#"
+        ],
+        "links": {
+            "itch": "",
+            "github": ""
+        }
+    },
+    {
+        "title": "MycoMini",
+        "desc": "Minimal mushroom foraging and potion-brewing discovery game.",
+        "img": "images/mycomini.png",
+        "badge": "progress",
+        "stack": [
+            "Phaser 3",
+            "TypeScript",
+            "Vite"
+        ],
+        "links": {
+            "itch": "",
             "github": ""
         }
     }
