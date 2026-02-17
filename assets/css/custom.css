@@ -117,7 +117,7 @@ a:focus-visible {
 }
 
 .profile-name {
-    font-size: 2em;
+    font-size: 2.25rem;
     font-weight: 800;
     margin: 0 0 0.1em;
     line-height: 1.15;
@@ -129,14 +129,14 @@ a:focus-visible {
 }
 
 .profile-tagline {
-    font-size: 1em;
+    font-size: 1.5rem;
     margin: 0 0 0.7em;
     font-weight: 500;
     color: rgba(244, 241, 222, 0.86);
 }
 
 .profile-description {
-    font-size: 0.95em;
+    font-size: 1.25rem;
     margin: 0;
     padding-top: 0.9em;
 
@@ -478,7 +478,7 @@ a:focus-visible {
 
     width: 26px;
     height: 26px;
-    font-size: 14px;
+    font-size: 18px;
 
     color: rgba(244, 241, 222, 0.50);
     opacity: 0.5;
