@@ -496,6 +496,12 @@ a:focus-visible {
    Responsive
    ============================= */
 
+@media (max-width: 1920px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 1280px) {
     #content {
         padding: 3em 3em;
@@ -503,6 +509,14 @@ a:focus-visible {
 
     .projects-grid {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mcard-stack {
+        visibility: hidden;
     }
 }
 
@@ -512,12 +526,17 @@ a:focus-visible {
         display: block;
     }
 
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
     #profile-sidebar {
         position: fixed;
         width: 100%;
         height: auto;
         padding: 1.2em 1.2em;
         border-right: none;
+        background-color: rgb(28, 28, 31);
         border-bottom: 1px solid var(--border);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
         text-align: left;
@@ -561,42 +580,6 @@ a:focus-visible {
 @media (max-width: 736px) {
     .section-title {
         font-size: 2em;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .mcard {
-        height: 118px;
-        padding: 14px 14px;
-        border-radius: 20px;
-    }
-
-    .mcard-icon {
-        border-radius: 16px;
-    }
-
-    .mcard-body {
-        padding-right: 0;
-    }
-
-    /* chips become normal flow on mobile to avoid collisions */
-    .mcard-stack {
-        position: static;
-        max-width: none;
-        justify-content: flex-start;
-        margin-left: auto;
-        margin-bottom: 8px;
-    }
-
-    .tech-chip {
-        height: 21px;
-        font-size: 0.70em;
-    }
-
-    .mcard-title {
-        font-size: 1.2em;
     }
 
     .mcard-subtitle {
